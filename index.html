@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fecha Límite</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: red;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    u {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <span id="texto">Sólo hasta hoy <u>--/--</u> a las 00:00 h</span>
+
+  <script>
+    const hoy = new Date();
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    const data = `${dia}/${mes}`;
+    document.getElementById("texto").innerHTML = `Sólo hasta hoy <u>${data}</u> a las 00:00 h`;
+  </script>
+</body>
+</html>
